@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ee">
+  <title>Práctica 2 · Diseño adaptable</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body id="pagina2">
+  <header class="site-header">
+    <a class="wordmark" href="pagina 1.html" aria-label="Inicio de las prácticas">Ejercicios de HTML y CSS</a>
+    <nav class="page-nav" aria-label="Ejercicios">
+      <a href="pagina 1.html">01 <span>Media queries</span></a>
+      <a class="active" href="pagina 2.html" aria-current="page">02 <span>Diseño adaptable</span></a>
+      <a href="pagina 3.html">03 <span>Transiciones</span></a>
+      <a href="pagina 4.html">04 <span>Animaciones</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">Práctica de clase <span>Ejercicio 2</span></p>
+      <h1>Diseño<br><em>adaptable</em></h1>
+      <p class="intro-copy">En pantallas pequeñas los bloques se muestran en una columna. Desde 768 píxeles se ponen en una fila.</p>
+    </section>
+    <section class="lab" aria-labelledby="layout-title">
+      <div class="lab-heading">
+        <div><p class="eyebrow">Ejercicio 2</p><h2 id="layout-title">Cambiar la dirección de los bloques</h2></div>
+        <span class="live-tag">Ejemplo</span>
+      </div>
+      <div class="layout-demo">
+        <div class="layout-top"><span>Contenedor flex</span><span class="layout-width">Ancho: <b>---</b></span></div>
+        <div class="layout-container">
+          <article class="layout-tile tile-image"><span class="tile-symbol">✳</span><span>01 / IMAGEN</span></article>
+          <article class="layout-tile tile-title"><span class="tile-symbol">Aa</span><span>02 / TÍTULO</span></article>
+          <article class="layout-tile tile-copy"><span class="tile-symbol">¶</span><span>03 / DESCRIPCIÓN</span></article>
+        </div>
+        <div class="layout-status"><span class="layout-state layout-state-mobile">UNA COLUMNA · COLUMNA</span><span class="layout-state layout-state-desktop">TRES COLUMNAS · FILA</span><span>Breakpoint: 768 px</span></div>
+      </div>
+      <div class="lesson-row">
+        <div><span class="lesson-number">↓</span><p>Base móvil<br><span>flex-direction: column</span></p></div>
+        <div><span class="lesson-number">→</span><p>Desde 768 px<br><span>flex-direction: row</span></p></div>
+        <code>Mobile-first</code>
+      </div>
+    </section>
+    <section class="code-note" aria-label="Ejemplo de CSS">
+      <div class="code-label">CSS <span>02</span></div>
+      <pre><code><span class="code-selector">.layout-container</span> {
+  <span class="code-prop">display</span>: <span class="code-value">flex</span>;
+  <span class="code-prop">flex-direction</span>: <span class="code-value">column</span>;
+}
+
+<span class="code-keyword">@media</span> (min-width: <span class="code-value">768px</span>) {
+  <span class="code-selector">.layout-container</span> { <span class="code-prop">flex-direction</span>: <span class="code-value">row</span>; }
+}</code></pre>
+    </section>
+    <footer class="page-footer"><a href="pagina 1.html">↖ Práctica anterior</a><span>GUÍA DE ESTUDIO · DISEÑO RESPONSIVO</span><a href="pagina 3.html">Siguiente práctica <b>↗</b></a></footer>
+  </main>
+  <script>
+    const widthLabel = document.querySelector('.layout-width b');
+    const updateWidth = () => { widthLabel.textContent = `${window.innerWidth} px`; };
+    window.addEventListener('resize', updateWidth);
+    updateWidth();
+  </script>
+</body>
+</html>

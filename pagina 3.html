@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ee">
+  <title>Práctica 3 · Transiciones</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body id="pagina3">
+  <header class="site-header">
+    <a class="wordmark" href="pagina 1.html" aria-label="Inicio de las prácticas">Ejercicios de HTML y CSS</a>
+    <nav class="page-nav" aria-label="Ejercicios">
+      <a href="pagina 1.html">01 <span>Media queries</span></a>
+      <a href="pagina 2.html">02 <span>Diseño adaptable</span></a>
+      <a class="active" href="pagina 3.html" aria-current="page">03 <span>Transiciones</span></a>
+      <a href="pagina 4.html">04 <span>Animaciones</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">Práctica de clase <span>Ejercicio 3</span></p>
+      <h1>Hover y<br><em>transiciones</em></h1>
+      <p class="intro-copy">Pasa el puntero sobre el botón o selecciónalo con Tab para ver cómo cambia de tamaño y color.</p>
+    </section>
+    <section class="lab" aria-labelledby="hover-title">
+      <div class="lab-heading">
+        <div><p class="eyebrow">Ejercicio 3</p><h2 id="hover-title">Probar el efecto hover</h2></div>
+        <span class="live-tag">Prueba</span>
+      </div>
+      <div class="hover-demo">
+        <div class="hover-top"><span>Estado inicial <span class="hover-state">· Esperando</span></span><span>Transform: scale</span></div>
+        <div class="hover-stage">
+          <button class="transform-target" type="button" aria-label="Activa el efecto de transformación"><span>+</span></button>
+          <p class="hover-prompt">PASA EL CURSOR<br><span>o enfoca con Tab</span></p>
+            <div class="transform-measure"><span>1×</span><i></i><span>1.35×</span></div>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <div><span class="lesson-number">1</span><p>transition<br><span>0.5s ease</span></p></div>
+        <div><span class="lesson-number">2</span><p>:hover<br><span>scale(1.35)</span></p></div>
+        <code>También funciona con teclado</code>
+      </div>
+    </section>
+    <section class="code-note" aria-label="Ejemplo de CSS">
+      <div class="code-label">CSS <span>03</span></div>
+      <pre><code><span class="code-selector">.transform-target</span> {
+  <span class="code-prop">transition</span>: <span class="code-value">transform .5s ease</span>;
+}
+
+<span class="code-selector">.transform-target:hover</span> {
+  <span class="code-prop">transform</span>: <span class="code-value">scale(1.35) rotate(5deg)</span>;
+}</code></pre>
+    </section>
+    <footer class="page-footer"><a href="pagina 2.html">↖ Práctica anterior</a><span>GUÍA DE ESTUDIO · DISEÑO RESPONSIVO</span><a href="pagina 4.html">Siguiente práctica <b>↗</b></a></footer>
+  </main>
+</body>
+</html>
